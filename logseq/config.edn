@@ -10,7 +10,7 @@
  ;; Available options:
  ;; - :now for NOW/LATER style (default)
  ;; - :todo for TODO/DOING style
- :preferred-workflow :now
+ :preferred-workflow :todo
 
  ;; Exclude directories/files.
  ;; Example usage:
@@ -133,7 +133,8 @@
  ;; :default-home {:page "Jun 3rd, 2021"}
  ;; 3. Set "home" as the home page and display multiple pages in the right sidebar:
  ;; :default-home {:page "home", :sidebar ["Page A" "Page B"]}
-
+:default-home {:page "Contents"}
+ 
  ;; Set the default location for storing notes.
  ;; Default value: "pages"
  ;; :pages-directory "pages"
@@ -413,4 +414,5 @@
  ;;      ;use Percent-encoding for other invalid characters
  :file/name-format :triple-lowbar
  :publishing/all-pages-public? true
- :editor/preferred-pasting-file? true}
+ :editor/preferred-pasting-file? true
+ :feature/enable-flashcards? false}
