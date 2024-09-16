@@ -1,0 +1,12 @@
+# Header
+menu:
+  Github: https://github.com/yingmanwumen
+
+# Favicon
+# favicon: /favicon.ico
+
+# Word count (needs hexo-wordcount)
+word_count: true
+
+highlight: true
+
