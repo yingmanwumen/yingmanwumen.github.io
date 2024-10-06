@@ -1,7 +1,6 @@
 ---
 title: Pros and Cons of Zig
-date: 2024-10-02 189:40:00
-tags:
+date: 2024-10-02 19:40:00
 excerpt: "Zig is a trending programming language, often compared to Rust and other seasoned programming languages. This article shows a quick overview of Zig and analysis its pros and cons."
 ---
 
@@ -228,7 +227,7 @@ The build system of Zig takes advantage of Zig itself with a `build.zig` script 
 
 ### Ecosystem
 
-Zig is such a young language compared to Rust (version 1.0 since 2015), Go (version 1.0 since 2012) and other widely used programing languages, no to mention that the version 1.0 of Zig is nowhere in sight. It is remains a new language, and the community and ecosystem are still in growing...
+Zig is such a young language compared to Rust (version 1.0 since 2015), Go (version 1.0 since 2012) and other widely used programing languages, no to mention that the version 1.0 of Zig is nowhere is sight. It is remains a new language, and the community and ecosystem are still in growing...
 
 ### Metaprogramming
 
