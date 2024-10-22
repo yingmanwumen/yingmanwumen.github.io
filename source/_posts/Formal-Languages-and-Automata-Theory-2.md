@@ -1,6 +1,6 @@
 ---
 title: Formal Languages and Automata Theory [2]
-excerpt: ''
+excerpt: 'Grammars, CFGs, linear grammars, and regular grammars.'
 date: 2024-10-21 21:22:06
 ---
 
