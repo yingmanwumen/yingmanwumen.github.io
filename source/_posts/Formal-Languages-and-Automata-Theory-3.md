@@ -1,6 +1,6 @@
 ---
 title: Formal Languages and Automata Theory [3]
-excerpt: ''
+excerpt: 'Finite Automata and Nondeterministic Finite Automata'
 date: 2024-10-22 23:21:04
 ---
 
