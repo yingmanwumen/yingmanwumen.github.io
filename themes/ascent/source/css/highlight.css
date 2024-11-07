@@ -20,6 +20,7 @@ code {
   padding: 0.1em 0.2em;
   border-radius: 5px;
   border: 1px solid var(--code-border-color);
+  font-size: 16px;
 }
 
 .highlight td,
