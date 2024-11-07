@@ -1,4 +1,4 @@
-@import url('//fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+@import url("//fonts.googleapis.com/css2?family=Roboto+Mono&display=swap");
 
 /* highlight */
 :root {
@@ -10,14 +10,23 @@
   --highlight-aqua-color: #40b7bf;
   --highlight-blue-color: #528fe0;
   --highlight-purple-color: #ab5fdd;
-  --highlight-stack: "Roboto Mono", "Inconsolata", "Consolas", monospace;
+  --highlight-stack: "JetBrains Mono", "Roboto Mono", "Inconsolata", "Consolas",
+    monospace;
 }
 
 code {
   font-family: var(--highlight-stack);
+  background-color: var(--code-bg-color);
+  padding: 0.1em 0.2em;
+  border-radius: 5px;
+  border: 1px solid var(--code-border-color);
 }
 
-.highlight td, .highlight th, .highlight table caption, .highlight table td, .highlight table th {
+.highlight td,
+.highlight th,
+.highlight table caption,
+.highlight table td,
+.highlight table th {
   border: none;
   padding: 0;
 }
@@ -57,7 +66,8 @@ pre::-webkit-scrollbar-thumb {
   text-align: right;
 }
 
-.highlight table, .highlight .gutter pre {
+.highlight table,
+.highlight .gutter pre {
   overflow-x: hidden;
   width: 2em;
 }
@@ -67,23 +77,47 @@ pre::-webkit-scrollbar-thumb {
   width: calc(100vw - 4rem);
 }
 
-pre .comment, pre .title {
+pre .comment,
+pre .title {
   color: var(--highlight-comment-color);
 }
 
-pre .variable, pre .attribute, pre .tag, pre .regexp, pre .ruby .constant, pre .xml .tag .title, pre .xml .pi, pre .xml .doctype, pre .html .doctype, pre .css .id, pre .css .class, pre .css .pseudo {
+pre .variable,
+pre .attribute,
+pre .tag,
+pre .regexp,
+pre .ruby .constant,
+pre .xml .tag .title,
+pre .xml .pi,
+pre .xml .doctype,
+pre .html .doctype,
+pre .css .id,
+pre .css .class,
+pre .css .pseudo {
   color: var(--highlight-red-color);
 }
 
-pre .number, pre .preprocessor, pre .built_in, pre .literal, pre .params, pre .constant {
+pre .number,
+pre .preprocessor,
+pre .built_in,
+pre .literal,
+pre .params,
+pre .constant {
   color: var(--highlight-orange-color);
 }
 
-pre .class, pre .ruby .class .title, pre .css .rules .attribute {
+pre .class,
+pre .ruby .class .title,
+pre .css .rules .attribute {
   color: var(--highlight-green-color);
 }
 
-pre .string, pre .value, pre .inheritance, pre .header, pre .ruby .symbol, pre .xml .cdata {
+pre .string,
+pre .value,
+pre .inheritance,
+pre .header,
+pre .ruby .symbol,
+pre .xml .cdata {
   color: var(--highlight-green-color);
 }
 
@@ -91,11 +125,19 @@ pre .css .hexcolor {
   color: var(--highlight-aqua-color);
 }
 
-pre .function, pre .python .decorator, pre .python .title, pre .ruby .function .title, pre .ruby .title .keyword, pre .perl .sub, pre .javascript .title, pre .coffeescript .title {
+pre .function,
+pre .python .decorator,
+pre .python .title,
+pre .ruby .function .title,
+pre .ruby .title .keyword,
+pre .perl .sub,
+pre .javascript .title,
+pre .coffeescript .title {
   color: var(--highlight-blue-color);
 }
 
-pre .keyword, pre .javascript .function {
+pre .keyword,
+pre .javascript .function {
   color: var(--highlight-purple-color);
 }
 
@@ -104,8 +146,9 @@ pre .keyword, pre .javascript .function {
   top: -0.2em;
 }
 
-@media all and (min-width:620px) {
-  .highlight .gutter, .highlight .code {
+@media all and (min-width: 620px) {
+  .highlight .gutter,
+  .highlight .code {
     left: -2em;
     position: relative;
   }
@@ -118,3 +161,4 @@ pre .keyword, pre .javascript .function {
     overflow: visible;
   }
 }
+
