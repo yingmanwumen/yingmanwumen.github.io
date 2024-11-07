@@ -26,6 +26,7 @@
     <link rel="icon" href="<%- theme.favicon %>">
   <% } %>
   <%- css('css/style') %>
+  <%- css('css/prism-line-numbers') %>
   <% if (theme.highlight){ %>
     <%- css('css/highlight') %>
   <% } %>
@@ -34,5 +35,10 @@
   <link
     rel="stylesheet"
     href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css"
+  />
 
-/></head>
+<script src="/js/prism-line-numbers.js"></script>
+<script src="/js/prism-copy-to-clipboard.js"></script>
+<script src="/js/prism-show-language.js"></script>
+
+</head>
