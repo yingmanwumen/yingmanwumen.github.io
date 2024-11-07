@@ -418,9 +418,9 @@ a.extend,
 
 #title a:hover,
 .article-title a:hover,
-a.nav-link:hover,
+/* a.nav-link:hover, */
 .archive-article-title a:hover,
-.article-nav a:hover,
+/* .article-nav a:hover, */
 a.page-number:hover,
 a.extend:hover,
 .month:hover,
