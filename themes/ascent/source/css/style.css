@@ -12,8 +12,8 @@
   --link-hover-color: #618794;
   --link-bg-color: #dae4e7;
   --selection-color: #dae4e7;
-  --body-stack: "Lora", "Georgia", "Times New Roman", serif;
-  --secondary-stack: "Lato", "Lucida Grande", "Lucida Sans Unicode",
+  --body-stack: "Times New Roman", "Lora", "Georgia", serif;
+  --secondary-stack: "Arial", "Lato", "Lucida Grande", "Lucida Sans Unicode",
     "Lucida Sans", "Verdana", sans-serif;
   --title-stack: "Playfair Display SC", "Georgia", serif;
 }
