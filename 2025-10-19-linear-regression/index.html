@@ -1,0 +1,419 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+    <!-- Enable responsiveness on mobile devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    
+    <meta name="description" content="Personal tech blog" />
+    <meta property="og:description" content="Personal tech blog" />
+    <meta property="twitter:description" content="Personal tech blog" />
+    
+
+    <!-- Title -->
+      
+
+    <title>
+    
+    (Draft) Data Science[1]: Linear Regression
+    
+</title>
+
+    <!-- Additional Facebook Meta Tags -->
+    <meta
+      property="og:url"
+      content="https:&#x2F;&#x2F;yingmanwumen.github.io&#x2F;2025-10-19-linear-regression&#x2F;"
+    />
+    <meta
+      property="og:type"
+      content="article"
+    />
+    <meta property="og:title" content="(Draft) Data Science[1]: Linear Regression" />
+    <meta
+      property="og:image"
+      content="https:&#x2F;&#x2F;yingmanwumen.github.io/icons/favicon/web-app-manifest-512x512.png"
+    />
+
+    <!-- Additional Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      property="twitter:url"
+      content="https:&#x2F;&#x2F;yingmanwumen.github.io&#x2F;2025-10-19-linear-regression&#x2F;"
+    />
+    <meta name="twitter:title" content="(Draft) Data Science[1]: Linear Regression" />
+    <meta
+      name="twitter:image"
+      content="https:&#x2F;&#x2F;yingmanwumen.github.io/icons/favicon/web-app-manifest-512x512.png"
+    />
+
+    <!-- Favicons -->
+    
+
+    <!-- RSS Feed -->
+    
+    <link
+      rel="alternate"
+      type="application/atom+xml"
+      title="RSS"
+      href="https://yingmanwumen.github.io/atom.xml"
+    />
+    
+
+    <!-- Load Styles -->
+    <link
+      rel="stylesheet"
+      href="https://yingmanwumen.github.io/site.css"
+    />
+
+    <!-- Pass Theme Preference as Data Attribute -->
+    <script>
+      document.documentElement.dataset.theme =
+        "toggle";
+    </script>
+  </head>
+
+  <body class="hack dark main container">
+    
+    
+         
+    <header class="nav-header">
+      <nav
+        itemscope
+        itemtype="http://schema.org/SiteNavigationElement"
+        class="navbar"
+      >
+        <div class="nav-links">
+          
+          <a
+            itemprop="url"
+            class=""
+            href="https://yingmanwumen.github.io/"
+          >
+            <span itemprop="name">Home</span>
+          </a>
+          
+          <a
+            itemprop="url"
+            class=""
+            href="https://yingmanwumen.github.io/categories"
+          >
+            <span itemprop="name">Categories</span>
+          </a>
+          
+          <a
+            itemprop="url"
+            class=""
+            href="https://yingmanwumen.github.io/tags"
+          >
+            <span itemprop="name">Tags</span>
+          </a>
+          
+        </div>
+      </nav>
+      <div class="user-actions-container">
+        
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          class="search-icon"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
+          />
+        </svg>
+        <input type="text" id="search" placeholder="Search..." />
+        <div class="search-results">
+          <div class="search-results__items"></div>
+        </div>
+         
+        <a id="dark-mode-toggle" href="#">
+          <img
+            src="https://yingmanwumen.github.io/icons/sun.svg"
+            id="sun-icon"
+            style="filter: invert(1)"
+            alt="Light mode"
+          />
+          <img
+            src="https://yingmanwumen.github.io/icons/moon.svg"
+            id="moon-icon"
+            alt="Dark mode"
+          />
+        </a>
+         
+        <a
+          href="https://yingmanwumen.github.io/atom.xml"
+          class="feed-icon"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="https://yingmanwumen.github.io/icons/rss.svg"
+            id="rss-icon"
+            alt="RSS feed"
+            class="social-icon"
+          />
+        </a>
+         
+        <a
+          href="https:&#x2F;&#x2F;github.com&#x2F;yingmanwumen"
+          class="feed-icon"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="https://yingmanwumen.github.io/icons/github.svg"
+            id="github-icon"
+            alt="GitHub"
+            class="social-icon"
+          />
+        </a>
+        
+      </div>
+    </header>
+     
+    
+
+<article itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+        <h1 itemprop="headline">(Draft) Data Science[1]: Linear Regression</h1>
+        <span class="muted">
+    <svg class="icon i-clock" viewBox="0 0 32 32"
+         width="16" height="16" fill="none" stroke="currentcolor"
+         stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
+        <circle cx="16" cy="16" r="14"/>
+        <path d="M16 8 L16 16 20 20"/>
+    </svg>
+    <span>5 minute read</span>
+    <svg class="icon i-edit" viewBox="0 0 32 32"
+         width="16" height="16" fill="none" stroke="currentcolor"
+         stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
+        <path d="M30 7 L25 2 5 22 3 29 10 27 Z M21 6 L26 11 Z M5 22 L10 27 Z"/>
+    </svg>
+
+    Published: 2025-10-19
+</span>
+    </header>
+
+    <div itemprop="articleBody">
+        
+            <p>TODO</p>
+
+            
+                <details class="toc-container">
+                    <summary class="toc-title">Table of Contents</summary>
+                    <ul class="toc-list">
+                        
+                            <li>
+                                <a href="https://yingmanwumen.github.io/2025-10-19-linear-regression/#linear-regression-de-ding-yi-ji-ying-yong-chang-jing">Linear Regression 的定义及应用场景</a>
+                                
+                                    <ul>
+                                        
+                                            <li>
+                                                <a href="https://yingmanwumen.github.io/2025-10-19-linear-regression/#linear">Linear</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="https://yingmanwumen.github.io/2025-10-19-linear-regression/#regression">Regression</a>
+                                            </li>
+                                            
+                                        
+                                            <li>
+                                                <a href="https://yingmanwumen.github.io/2025-10-19-linear-regression/#ying-yong-chang-jing">应用场景</a>
+                                            </li>
+                                            
+                                        
+                                    </ul>
+                                
+                            </li>
+                        
+                            <li>
+                                <a href="https://yingmanwumen.github.io/2025-10-19-linear-regression/#references">References</a>
+                                
+                            </li>
+                        
+                    </ul>
+                </details>
+            
+
+            <!-- Render the rest of the content after removing the summary portion -->
+            
+<span id="continue-reading"></span>
+<p>作为一个在此之前对 Data Science 一无所知、大学的统计考了60分刚刚好的 Coder，我需要以一种适合自己的方式去接触这门对我而言全新的学科。
+线性回归模型似乎是 Hello World 级别的课题，就从这里开始吧。</p>
+<p>我需要在正式开始之前，明确我想学到的知识是什么。作为小镇做题家，解题是我最擅长的事情了。下面这些问题是我认为至关重要的：</p>
+<ol>
+<li>Linear Regression <strong>是什么</strong>、<strong>有什么用</strong>？</li>
+<li>Linear Regression的 <strong>优势</strong>、<strong>劣势</strong> 分别是什么？</li>
+<li>Linear Regression 的 <strong>使用场景</strong> 是什么？什么时候应该使用 Linear Regression、什么时候不应该使用 Linear Regression？</li>
+<li>有哪些衍生自 Linear Regression 的 model？</li>
+<li>使用 Linear Regression 的过程中、需要注意哪些问题？</li>
+<li>有什么现成的 library、framework、或者 resolver 可以用于使用 Linear Regression 来解决问题？</li>
+<li>如果我想深入学习 Linear Regression，有哪些经典的书籍、paper 可以作为 reference？</li>
+</ol>
+<blockquote>
+<p>在 LLM 发明前，我需要阅读大量的书籍、提取并总结大量信息，运气好的话才有可能从中找到一部分答案 —— 更重要的是，我需要花费大量的时间才能解决我的问题。而现在有了 LLM，一切就变得简单了起来，只要有一套高效的、适合自己的学习体系，配合 LLM 广阔的知识，任何人都能在极短的时间内入门某个课题。</p>
+</blockquote>
+<h1 id="linear-regression-de-ding-yi-ji-ying-yong-chang-jing">Linear Regression 的定义及应用场景</h1>
+<h2 id="linear">Linear</h2>
+<p>$$
+\hat{y} = \beta_0 + \sum_j\beta_j\Phi_j(x_j) + \varepsilon
+$$</p>
+<p>线性模型中线性的意思是：只要参数是线性的，那么这个模型就是线性的。</p>
+<p>上述公式中，即使 $\Phi(x)$ 是 $x^2$ 或者 $e^x$，都不影响这个模型是一个线性模型 —— 因为它的参数是线性的。</p>
+<p>以下是非线性模型的例子：</p>
+<p>$$
+\begin{split}
+&amp;Y = \beta_1 x^{\beta2} \\
+&amp;Y = \beta_1 + \beta_2 e^{\beta_3x} \\
+&amp;Y = x_1 x_2
+\end{split}
+$$</p>
+<p>一种直观的判断方法是观察 $x$ 是否只被一个 $\beta$ 影响。</p>
+<h2 id="regression">Regression</h2>
+<p>回归分析是一种研究数据的方法，目的是分析多个变量之间的相关性，以此来预测目标变量的值。</p>
+<blockquote>
+<p>“回归”一词最早由法兰西斯·高尔顿（Francis Galton）所使用。他曾对亲子间的身高做研究，发现父母的身高虽然会遗传给子女，但子女的身高却有逐渐“回归到中等（即人的平均值）”的现象。不过现在的回归已经和当初的意义不尽相同。</p>
+</blockquote>
+<p>$$
+E(X|Y) = f(X, \beta)
+$$</p>
+<p>其中</p>
+<ul>
+<li>$X$ 为自变量</li>
+<li>$Y$ 为因变量</li>
+<li>$\beta$ 为回归系数</li>
+<li>$f$ 为回归函数</li>
+<li>$E$ 为期望</li>
+</ul>
+<h2 id="ying-yong-chang-jing">应用场景</h2>
+<p>什么情况下能使用 Linear Regression？</p>
+<blockquote>
+<p><strong>古典假设</strong></p>
+<ul>
+<li>样本是在总体中 <strong>随机抽取</strong> 的</li>
+<li>因变量 $Y$ 在实直线上连续</li>
+<li>残差项独立随机且服从正态分布</li>
+</ul>
+</blockquote>
+<h1 id="references">References</h1>
+<ul>
+<li><a href="https://zh.wikipedia.org/zh-sg/%E8%BF%B4%E6%AD%B8%E5%88%86%E6%9E%90">https://zh.wikipedia.org/zh-sg/%E8%BF%B4%E6%AD%B8%E5%88%86%E6%9E%90</a></li>
+<li><a href="https://zh.wikipedia.org/zh-sg/%E7%B7%9A%E6%80%A7%E5%9B%9E%E6%AD%B8">https://zh.wikipedia.org/zh-sg/%E7%B7%9A%E6%80%A7%E5%9B%9E%E6%AD%B8</a></li>
+<li><a href="https://zh.wikipedia.org/zh-sg/%E6%AD%A3%E6%80%81%E5%88%86%E5%B8%83">https://zh.wikipedia.org/zh-sg/%E6%AD%A3%E6%80%81%E5%88%86%E5%B8%83</a></li>
+<li><a href="https://zh.d2l.ai/chapter_linear-networks/linear-regression.html">https://zh.d2l.ai/chapter_linear-networks/linear-regression.html</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/74673610">https://zhuanlan.zhihu.com/p/74673610</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/127972563">https://zhuanlan.zhihu.com/p/127972563</a></li>
+</ul>
+
+
+
+        
+    </div>
+
+    <!-- Comment section -->
+    
+      
+        
+          <script
+  src="https://giscus.app/client.js"
+  data-repo="yingmanwumen&#x2F;yingmanwumen.github.io"
+  data-repo-id="R_kgDOOO4Aig"
+  data-category="General"
+  data-category-id="DIC_kwDOOO4Ais4CoeBi"
+  data-mapping="pathname"
+  data-strict="0"
+  data-reactions-enabled="1"
+  data-emit-metadata="0"
+  data-input-position="bottom"
+  data-theme="preferred_color_scheme"
+  data-lang="en"
+  data-loading="lazy"
+  crossorigin="anonymous"
+  async
+></script>
+
+        
+      
+    
+
+
+    
+        <footer>
+            <hr>
+            <p>
+                
+                    Published by yingmanwumen
+                
+                
+                    
+                    in <a href="https://yingmanwumen.github.io/categories/data-science/">data science</a>
+                
+                
+                    and
+                    tagged
+                    
+                        <a href="https://yingmanwumen.github.io/tags/self-teaching/">self-teaching</a>
+                        
+                            
+                                
+                                    ,
+                                
+                            
+                        
+                    
+                        <a href="https://yingmanwumen.github.io/tags/talk-with-chatgpt/">talk with chatgpt</a>
+                        
+                            
+                                
+                                    and
+                                
+                            
+                        
+                    
+                        <a href="https://yingmanwumen.github.io/tags/linear-regression/">linear regression</a>
+                        
+                            
+                        
+                    
+                
+            </p>
+            
+            
+        </footer>
+    
+</article>
+
+
+
+    <!-- optional scripts -->
+     
+    <script src="https://yingmanwumen.github.io/js/codeblock.js"></script>
+     
+    <script src="https://yingmanwumen.github.io/js/toggle-theme.js"></script>
+     
+<!-- MathJax script for rendering LaTeX math equations -->
+<script src="https://yingmanwumen.github.io/js/mathjax-config.js"></script>
+<script
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"
+  async
+></script>
+
+ 
+<script type="text/javascript" src="https://yingmanwumen.github.io/elasticlunr.min.js"></script>
+<script type="text/javascript" src="https://yingmanwumen.github.io/js/search.js"></script>
+ 
+
+    <!-- mermaid support -->
+    <script type="module">
+      import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+      mermaid.initialize({ startOnLoad: true });
+    </script>
+
+  </body>
+</html>
