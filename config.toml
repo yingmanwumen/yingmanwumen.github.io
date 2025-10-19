@@ -12,8 +12,8 @@ description = "Personal tech blog"
 generate_feeds = true
 
 taxonomies = [
-    {name = "categories", feed = true},
-    {name = "tags", feed = true},
+  { name = "categories", feed = true },
+  { name = "tags", feed = true },
 ]
 
 theme = "radion"
@@ -32,9 +32,9 @@ index_format = "elasticlunr_json"
 author = "yingmanwumen"
 github = "https://github.com/yingmanwumen"
 radion_menu = [
-    {url = "$BASE_URL/", name = "Home"},
-    {url = "$BASE_URL/categories", name = "Categories"},
-    {url = "$BASE_URL/tags", name = "Tags"},
+  { url = "$BASE_URL/", name = "Home" },
+  { url = "$BASE_URL/categories", name = "Categories" },
+  { url = "$BASE_URL/tags", name = "Tags" },
 ]
 radion_title = "Blog"
 
@@ -48,7 +48,7 @@ latex = true
 enable_search = true
 
 # Light/Dark Mode set
-theme = "auto" # options: {light, dark, auto, toggle}
+theme = "toggle" # options: {light, dark, auto, toggle}
 
 # Whether to display favicon
 favicon = false
